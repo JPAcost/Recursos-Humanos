@@ -1,0 +1,232 @@
+/* =======================
+   CONFIGURACIÓN GENERAL
+======================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    background: #f1f4f9;
+}
+
+/* =======================
+   SIDEBAR
+======================= */
+.sidebar {
+    width: 240px;
+    background: #1e1e2f;
+    color: white;
+    height: 200vh;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.sidebar li:hover {
+    background: #2e2e45;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-title {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #aaa;
+    text-transform: uppercase;
+    padding-left: 5px;
+}
+
+/* =======================
+   CONTENIDO PRINCIPAL
+======================= */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    background: #f4f6fa;
+}
+
+.main-content h1 {
+    margin-bottom: 30px;
+}
+
+/* =======================
+   CARDS
+======================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #2c3e50;
+}
+
+/* =======================
+   BOTONES ACCESOS RÁPIDOS
+======================= */
+.quick-actions {
+    margin-top: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #2c3e50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    margin: 5px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #1abc9c;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+.table-box{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    overflow-x: auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 14px;
+}
+
+th{
+    color: #555;
+    font-weight: 600;
+    background: #f7f9fc;
+}
+
+.badge{
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    color: white;
+    background: #2c3e50;
+}
+
+.badge.ok{ background:#1abc9c; }
+.badge.warn{ background:#f39c12; }
+.badge.bad{ background:#e74c3c; }
+
+.form-box{
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    max-width: 900px;
+}
+
+.input, select, textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+}
+
+.input:focus, select:focus, textarea:focus{
+    border-color: #1abc9c;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 12px;
+}
+
+.col-6{ grid-column: span 6; }
+.col-4{ grid-column: span 4; }
+.col-3{ grid-column: span 3; }
+.col-12{ grid-column: span 12; }
+
+.alert{
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.alert.success{ background:#d1fae5; color:#065f46; }
+.alert.danger{ background:#fee2e2; color:#7f1d1d; }
+.alert.warning{ background:#fef3c7; color:#7c2d12; }
+
+@media (max-width:768px){
+  .col-6,.col-4,.col-3{ grid-column: span 12; }
+}

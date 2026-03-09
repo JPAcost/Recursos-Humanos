@@ -1,0 +1,560 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --sidebar-1: #0f172a;
+    --sidebar-2: #1e293b;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    --shadow-hover: 0 14px 34px rgba(15, 23, 42, 0.12);
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(180deg, #f8fbff 0%, #f1f5f9 100%);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 270px;
+    height: 100vh;
+    overflow-y: auto;
+    background: linear-gradient(180deg, var(--sidebar-1), var(--sidebar-2));
+    color: #fff;
+    padding: 24px 16px;
+    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.16);
+}
+
+.sidebar-brand {
+    padding: 10px 10px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 16px;
+}
+
+.sidebar-brand h2 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.sidebar-brand p {
+    font-size: 13px;
+    color: #aab8cc;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 6px;
+}
+
+.sidebar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #d8e3f0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.25s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: rgba(37, 99, 235, 0.20);
+    color: #ffffff;
+    transform: translateX(4px);
+}
+
+.menu-title {
+    margin: 20px 10px 10px;
+    font-size: 11px;
+    color: #90a4bf;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.logout {
+    background: #dc2626;
+    color: #fff !important;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.logout:hover {
+    background: #b91c1c !important;
+    transform: none !important;
+}
+
+/* CONTENIDO */
+.main-content {
+    margin-left: 270px;
+    padding: 28px 30px 40px;
+    min-height: 100vh;
+}
+
+/* TOPBAR */
+.topbar {
+    margin-bottom: 20px;
+}
+
+.topbar-label {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.topbar h1 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+
+.topbar-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 55%, #1e40af 100%);
+    border-radius: 24px;
+    padding: 30px;
+    color: #fff;
+    margin-bottom: 30px;
+    box-shadow: 0 16px 40px rgba(37, 99, 235, 0.28);
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.hero p {
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 760px;
+    opacity: 0.95;
+}
+
+.hero-badge {
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.24);
+    backdrop-filter: blur(5px);
+    padding: 16px 22px;
+    border-radius: 18px;
+    font-weight: 700;
+    min-width: 140px;
+    text-align: center;
+}
+
+/* SECCIONES */
+.section {
+    margin-bottom: 34px;
+}
+
+.section-header {
+    margin-bottom: 16px;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.section-header p {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+/* GRIDS */
+.stats-grid,
+.alerts-grid,
+.task-grid,
+.quick-actions {
+    display: grid;
+    gap: 18px;
+}
+
+.stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.alerts-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.task-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.quick-actions {
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* TARJETAS */
+.card,
+.alert-card,
+.task-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.25s ease;
+}
+
+.card:hover,
+.alert-card:hover,
+.task-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+.card {
+    padding: 22px;
+    min-height: 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90px;
+    height: 90px;
+    opacity: 0.08;
+    border-radius: 0 0 0 100%;
+    background: currentColor;
+}
+
+.stat-card .card-label {
+    display: block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+}
+
+.stat-card h3 {
+    font-size: 32px;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    font-weight: 800;
+    color: var(--text);
+    position: relative;
+    z-index: 2;
+    word-break: break-word;
+}
+
+.stat-card small {
+    font-size: 14px;
+    color: var(--muted);
+    position: relative;
+    z-index: 2;
+}
+
+/* COLORES POR TARJETA */
+.stat-card.empleados {
+    color: #2563eb;
+    border-top: 4px solid #2563eb;
+}
+
+.stat-card.departamentos {
+    color: #7c3aed;
+    border-top: 4px solid #7c3aed;
+}
+
+.stat-card.roles {
+    color: #0891b2;
+    border-top: 4px solid #0891b2;
+}
+
+.stat-card.planilla {
+    color: #059669;
+    border-top: 4px solid #059669;
+}
+
+.stat-card.horas {
+    color: #ea580c;
+    border-top: 4px solid #ea580c;
+}
+
+.stat-card.liquidaciones {
+    color: #dc2626;
+    border-top: 4px solid #dc2626;
+}
+
+/* ALERTAS */
+.alert-card {
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    text-decoration: none;
+    color: inherit;
+    border-left: 7px solid transparent;
+}
+
+.alert-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.alert-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.alert-action {
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    color: var(--primary);
+}
+
+.alert-card.warning {
+    border-left-color: #f59e0b;
+}
+
+.alert-card.info {
+    border-left-color: #3b82f6;
+}
+
+.alert-card.success {
+    border-left-color: #10b981;
+}
+
+/* TAREAS */
+.task-card {
+    padding: 22px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.task-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.task-card p {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.task-card span {
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.no-action {
+    background: #f8fafc;
+    border-style: dashed;
+}
+
+/* BOTONES PERSONALIZADOS */
+.quick-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    padding: 14px 18px;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    border: none;
+    border-radius: 14px;
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+    transition: all 0.25s ease;
+}
+
+.quick-btn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* LEGIBILIDAD GENERAL DE BOTONES BOOTSTRAP */
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:focus {
+    color: #000 !important;
+}
+
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:focus,
+.btn-success,
+.btn-success:hover,
+.btn-success:focus,
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: #fff !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-badge {
+        width: 100%;
+        text-align: left;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        display: block;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .topbar h1 {
+        font-size: 28px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .stats-grid,
+    .alerts-grid,
+    .task-grid,
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================
+   FIX BOTONES BOOTSTRAP EN FORMULARIOS Y TABLAS
+   ========================================== */
+
+.form-actions .btn,
+.acciones-btn .btn,
+.search-form .btn {
+    min-height: auto !important;
+    display: inline-block !important;
+    padding: .375rem .75rem !important;
+    border-radius: .375rem !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+}
+
+/* BOTON EDITAR */
+.acciones-btn .btn-warning,
+.form-actions .btn-warning,
+.acciones-btn .btn-warning:hover,
+.form-actions .btn-warning:hover,
+.acciones-btn .btn-warning:focus,
+.form-actions .btn-warning:focus {
+    background: #ffc107 !important;
+    border-color: #ffc107 !important;
+    color: #000 !important;
+}
+
+/* BOTON ELIMINAR / INACTIVAR */
+.acciones-btn .btn-danger,
+.form-actions .btn-danger,
+.acciones-btn .btn-danger:hover,
+.form-actions .btn-danger:hover,
+.acciones-btn .btn-danger:focus,
+.form-actions .btn-danger:focus {
+    background: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: #fff !important;
+}
+
+/* BOTON GUARDAR */
+.form-actions .btn-success,
+.form-actions .btn-success:hover,
+.form-actions .btn-success:focus {
+    background: #198754 !important;
+    border-color: #198754 !important;
+    color: #fff !important;
+}
+
+/* BOTON CANCELAR */
+.form-actions .btn-secondary,
+.form-actions .btn-secondary:hover,
+.form-actions .btn-secondary:focus {
+    background: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #fff !important;
+}
+
+/* BOTON BUSCAR */
+.search-form .btn-light,
+.search-form .btn-light:hover,
+.search-form .btn-light:focus {
+    background: #f8f9fa !important;
+    border-color: #ced4da !important;
+    color: #212529 !important;
+}
